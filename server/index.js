@@ -22,10 +22,22 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
     cors({
-        origin:"http://localhost:3000",
-        credentials:true,
+      origin: [
+        "http://localhost:3000", // Local development frontend URL
+        "https://your-vercel-frontend-url.vercel.app" // Vercel production frontend URL
+      ],
+      credentials: true, // To allow cookies and credentials to be sent
     })
-)
+  );
+  
+
+// app.use(
+//     cors({
+//         origin:"http://localhost:3000",
+        
+//         credentials:true,
+//     })
+// )
 
 app.use(
     fileUpload({
