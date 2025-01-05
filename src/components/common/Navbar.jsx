@@ -8,6 +8,7 @@ import ProfileDropDown from '../core/auth/ProfileDropDown'
 import { categories } from '../../services/apis'
 import { apiConnector } from '../../services/apiconnector'
 import { IoIosArrowDropdownCircle } from 'react-icons/io'
+import { ACCOUNT_TYPE } from '../../utils/constants'
 
 
 
@@ -112,17 +113,17 @@ const Navbar = () => {
             </nav>
 
             {/* Signup and login button */}
-            <div className='flex gap-x-4 items-center'>
+            <div className='hidden gap-x-4 items-center md:flex'>
                 {
                     // HW: add css to cart
-                    user && user?.accountType !== "Instructor" && (
+                    user && user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR && (
                         <Link to="/dashboard/cart" className='relative'
                         >
                             <CiShoppingCart 
-                            className='absolute text-pink-100'/>
+                            className='text-2xl text-richblack-100 '/>
                             {
-                                totalItems >0 && (
-                                    <span className='text-yellow-25'>
+                                totalItems > 0 && (
+                                    <span className='absolute -bottom-2 -right-2 grid  h-5 w-5 place-items-center overflow-hidden rounded-full bg-richblack-600 text-center text-xs font-bold text-yellow-100 '>
                                         {totalItems}
                                     </span>
                                 )
