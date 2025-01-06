@@ -61,7 +61,7 @@ export const fetchCourseDetails = async(courseId)=> {
             throw new Error(response.data.message)
         }
         result= response?.data
-        toast.success(response?.data?.message)
+        // toast.success(response?.data?.message)
     }
     catch(error){
         console.log("COURSE_DETAILS_API API ERROR....",error)

@@ -14,7 +14,7 @@ const EnrolledCourses = () => {
   const getEnrolledCourses= async()=> {
     try{
       const response= await getUserEnrolledCourses(token);
-      console.log("Enrolled Courses... ",response)
+      // console.log("Enrolled Courses... ",response)
       setEnrolledCourses(response); 
     }
     catch(error){
@@ -32,7 +32,7 @@ const EnrolledCourses = () => {
           Enrolled Courses
        </div>
        {
-        !enrolledCourses ? (<div className='grid min-h-[calc(100vh-3.5rem)] place-items-center'>
+        !enrolledCourses ? (<div className='grid min-h-[calc(100vh-3.5rem)] mb-40 place-items-center'>
           <div className='spinner'>
           
           </div>

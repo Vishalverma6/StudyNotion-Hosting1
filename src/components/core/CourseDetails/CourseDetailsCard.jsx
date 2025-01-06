@@ -1,5 +1,5 @@
 import copy from 'copy-to-clipboard';
-import React from 'react'
+import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
@@ -13,16 +13,20 @@ const CourseDetailsCard = ({course, setConfirmationModal, handleBuyCourse}) => {
     const {token} = useSelector((state)=> state.auth);
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const {cart} = useSelector((state)=> state.cart);
 
+    
+    const addedToCart = cart.findIndex((Item)=> Item._id===course._id) >= 0
 
 
     const handleAddToCart =() => {
         if(user && user?.accountType === ACCOUNT_TYPE.INSTRUCTOR){
-            toast.error("You are an Instructor, You cant buy a course");
+            toast.error("You are an Instructor, You can't buy a course");
             return;
         }
         if(token){
             dispatch(addToCart(course));
+            
             return ;
         }
         setConfirmationModal({
@@ -76,9 +80,9 @@ const CourseDetailsCard = ({course, setConfirmationModal, handleBuyCourse}) => {
             (!course?.studentsEnrolled.includes(user?._id)) && (
                 <button 
                   className='bg-yellow-50 w-fit text-richblack-800 px-2 py-1 rounded-md'
-                  onClick={handleAddToCart}
+                  onClick={addedToCart ?() => navigate("/dashboard/cart") : handleAddToCart}
                 >
-                     Add to Cart
+                    {addedToCart ? " Go to Cart" : " Add to Cart"}
                 </button>
             )
            }

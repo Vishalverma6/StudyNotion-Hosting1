@@ -13,6 +13,7 @@ import { BiInfoCircle } from "react-icons/bi";
 import { HiOutlineGlobeAlt } from "react-icons/hi";
 import ReactMarkdown from 'react-markdown';
 
+
 const CourseDetails = () => {
 
     const {user} = useSelector((state)=> state.profile);
@@ -87,12 +88,13 @@ const CourseDetails = () => {
         })
         
     }
-
+    
+    
 
     if(loading || !courseData){
       return (
-        <div className='grid min-h-[calc(100vh-3.5rem) place-items-center]'>
-            Loading...
+        <div className='flex mx-auto  items-center justify-between mt-40'>
+           
             <div className='spinner'></div>
         </div>
       )

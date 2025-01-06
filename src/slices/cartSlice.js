@@ -5,6 +5,7 @@ const initialState= {
     cart:localStorage.getItem("cart")?JSON.parse(localStorage.getItem("cart")) :[],
     total:localStorage.getItem("total") ?JSON.parse(localStorage.getItem("total")):0,
     totalItems:localStorage.getItem("totalItems") ? JSON.parse(localStorage.getItem("totalItems")): 0,
+    isAddedTocart:localStorage.getItem("isAddedToCart") ? JSON.parse(localStorage.getItem("isAddedTocart")): false,
 };
 
 const cartSlice= createSlice({
