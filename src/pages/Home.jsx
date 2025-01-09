@@ -18,12 +18,12 @@ function Home(){
         <div>
             {/* section 1 */}
             <div className="relative mx-auto max-w-maxContent text-white flex flex-col
-             w-11/12 items-center justify-between">
+             w-11/12  items-center justify-between">
 
                <Link to="/signup">
 
                <div className="group mt-12 p-1 mx-auto rounded-full bg-richblack-800 font-bold 
-               text-richblack-200 transition-all duration-200 hover:scale-95 w-fit">
+               text-richblack-200 drop-shadow-[0_1.5px_rgba(255,255,255,0.25)] hover:scale-95 hover:drop-shadow-none transition-all duration-200  w-fit">
                   <div className="flex flex-row  items-center gap-x-2 rounded-full px-10
                    py-[5px] transition-all duration-200  group-hover:bg-richblack-900 ">
                      <p>Become a Instructor</p>
@@ -56,7 +56,9 @@ function Home(){
                   <video 
                   muted 
                   loop
-                  autoPlay  className="border-r-8 border-b-8 ">
+                  autoPlay  
+                  className="border-r-8 border-b-8 shadow-[20px_20px_rgba(255,255,255)]"
+                  >
                      
                      <source src={Banner} type="video/mp4" 
                     />
@@ -92,7 +94,7 @@ function Home(){
                     }
                 }
 
-                codeblock={`<!DOCTYPE html>\n  <html>\n  <head><title>Example</title>\n </head>\n <body>\n <h1><a href="/">Header </a> \n </h1> 
+                codeblock={`<!DOCTYPE html>\n <html lang="en">\n<head>\n<title>This is myPage</title>\n</head>\n<body>\n<h1><a href="/">Header</a></h1>\n<nav> <a href="/one">One</a> <a href="/two">Two</a> <a href="/three">Three</a>\n</nav>\n</body> 
                    
                    `}
                    codeColor={"text-yellow-25"}
@@ -106,7 +108,7 @@ function Home(){
                   <CodeBlocks 
                    position={"lg:flex-row-reverse"} 
                    heading={
-                    <div className="text-4xl font-semibold"> 
+                    <div className="text-4xl w-[100%] lg:w-[50%] font-semibold"> 
                         start 
                         <HighlightText text={"coding in seconds"}/>
                     </div>

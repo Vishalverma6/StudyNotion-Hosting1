@@ -33,7 +33,8 @@ const ExploreMore = () => {
             Learn to build anything you can imagine
         </p>
 
-        <div className='flex rounded-full bg-richblack-800 mt-5 mb-5 border border-richblack-700
+         {/* Tabs Section */}
+        <div className='hidden lg:flex rounded-full bg-richblack-800 mt-5 mb-5 border border-richblack-700
          px-1 py-1'>
             {
                 tabsName.map( (element,index) => {
@@ -52,11 +53,11 @@ const ExploreMore = () => {
             }
         </div>
 
-        <div className='lg:h-[150px]'></div>
+        <div className=' hidden lg:block lg:h-[150px]'></div>
 
         {/* Course Card ka group */}
 
-        <div className='absolute flex -mt-[140px] -translate-x-28  gap-2 justify-between'>
+        <div className='lg:absolute md:flex hidden -mt-[140px] -translate-x-28  gap-2 lg:justify-between'>
             {
                 courses.map( (element,index) => {
                     return(
